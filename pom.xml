@@ -12,6 +12,7 @@
     <modules>
         <module>hello-server</module>
         <module>server-eureka</module>
+        <module>ribbon-consumer</module>
     </modules>
 
 
