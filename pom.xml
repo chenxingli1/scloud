@@ -13,6 +13,7 @@
         <module>hello-server</module>
         <module>server-eureka</module>
         <module>ribbon-consumer</module>
+        <module>feign-server</module>
     </modules>
 
 

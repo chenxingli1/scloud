@@ -1,5 +1,6 @@
 package com.scloud.ribbon.controller;
 
+import com.scloud.ribbon.server.HelloServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -8,11 +9,19 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class ConsumerController {
+//    @Autowired
+//    RestTemplate restTemplate;
+//
+//    @RequestMapping(value = "/ribbon-consumer", method = RequestMethod.GET)
+//    public String helloConsumer() {
+//        return restTemplate.getForEntity("http://HELLO-SERVER/hello", String.class).getBody();
+//    }
+
     @Autowired
-    RestTemplate restTemplate;
+    HelloServer helloServer;
 
     @RequestMapping(value = "/ribbon-consumer", method = RequestMethod.GET)
     public String helloConsumer() {
-        return restTemplate.getForEntity("http://HELLO-SERVER/hello", String.class).getBody();
+        return helloServer.helloService();
     }
 }
